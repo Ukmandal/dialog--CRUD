@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-content>
+     
+        <div class="container">
+                <h1> CREATE READ UPDATE DELETE in DialogBox. </h1> <hr>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button mat-raised-button style="color: #fff;background-color: #153961;" 
+                     (click)="openConfirmationDialogEdit(0)">Add New Customer</button>
+
+                    <hr>
+                    <h2><u>List of Customers</u></h2>
+                </div>
+                <div clas="panel-body">
+                    <div class="table-responsive">
+                        <table  mat-table class="table">
+                            <thead mat-head>
+                                <tr mat-row>
+                                    <th mat-column><u>Id</u></th>
+                                    <th mat-column><u>First Name</u></th>
+                                    <th mat-column><u>Last Name</u></th>
+                                    <th mat-column><u>Address</u></th>
+                                    <th mat-column><u>City</u></th>
+                                    <th mat-column><u>State</u></th>
+                                    <th mat-column><u>Postal Code</u></th>
+                                    <th mat-column><u>Action</u></th>
+
+                                </tr>
+                            </thead>
+                            <tbody mat-body>
+                                <tr *ngFor="let c of cs; let Id=index">
+                                    <td mat-cell>{{c.Id}}</td>
+                                    <td mat-cell>{{c.firstName}}</td>
+                                    <td mat-cell>{{c.lastName}}</td>
+                                    <td mat-cell>{{c.address}}</td>
+                                    <td mat-cell>{{c.city}}</td>
+                                    <td mat-cell>{{c.state}}</td>
+                                    <td mat-cell>{{c.postalcode}}</td>
+                                    <button mat-raised-button (click)="openConfirmationDialogDelete(c.Id)">Delete</button>
+                                    <button mat-raised-button (click)="openConfirmationDialogEdit(c.Id)">Edit</button>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </mat-card-content>
+</mat-card>
