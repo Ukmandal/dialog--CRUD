@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>New && Edit</h1>
+<div mat-dialog-content>
+
+<h1> My New and Edit Formation </h1>
+<div class="text-center">
+  <form [formGroup]="formationForm" novalidate>
+    <table class="fullwidth" cellspacing="0">
+      <tr>       
+        <td>
+          <mat-input-container class="fullwidth">
+          <input  matInput type="text" id="firstName" class="form-control" placeholder="First Name" formControlName="firstName">
+          </mat-input-container>
+        </td>
+        <td>
+          <mat-input-container class="fullwidth">
+          <input  matInput  type="text" id="lastName" class="form-control" placeholder="Last Name" formControlName="lastName">
+          </mat-input-container>
+        </td>
+
+        <td>
+          <mat-input-container class="fullwidth">
+          <textarea matInput  type="text" id="address" class="form-control" placeholder="Address" formControlName="address"></textarea>
+          </mat-input-container>
+        </td>
+      </tr>
+    </table>
+
+    <table class="fullwidth" cellspacing="0">
+      <tr>
+        <td>
+          <mat-input-container class="fullwidth">
+          <input matInput  type="text" id="city" class="form-control" placeholder="City" formControlName="city">
+          </mat-input-container>
+        </td>
+        <td>
+          <mat-input-container class="fullwidth">
+          <input matInput type="text" id="state" class="form-control" placeholder="State" formControlName="state" >
+          </mat-input-container>
+        </td>    
+        <td>
+          <mat-input-container class="fullwidth">
+          <input matInput  type="text" id="postalcode" class="form-control" placeholder="Postal Code" maxlength="5" formControlName="postalcode" >
+          </mat-input-container>
+        </td>
+      </tr>
+    </table>
+<div mat-dialog-actions>
+<button mat-button style="color: #fff;background-color: #153961;" (click)="onUpdate()">Save</button>
+<button mat-button (click)="dialogRef.close(false)">Cancel</button>
+</div>
+<input type="checkbox" checked="checked"> Remember me<br>
+<span class="psw">Forgot <a href="#">password?</a></span>
+</form>  
+</div>
+    
+</div>
